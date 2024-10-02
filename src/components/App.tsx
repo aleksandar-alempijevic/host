@@ -21,26 +21,27 @@ function App() {
 
   return (
     <>
-      <div className="py-10 text-center text-2xl">HOST APPLICATION</div>
-      <div>
-        <iframe
-          title="child microfrontend"
-          id="childmf"
-          src={import.meta.env.VITE_CHILD_MF}
-          ref={ref}
-        ></iframe>
-      </div>
+      <div className="py-10 text-center text-2xl">Aircraft shop</div>
       <div>
         <form className="p-3">
-          <label htmlFor="some_input">Enter text:</label>
+          <label htmlFor="search_input">Search:</label>
           <input
             type="text"
-            id="some_input"
+            id="search_input"
             value={currentText}
             onChange={(e) => setCurrentText(e.target.value)}
             className="ml-3 border-2 border-solid border-blue-100"
           />
         </form>
+      </div>
+      <div>
+        <iframe
+          className="h-64"
+          title="products"
+          id="products"
+          src={import.meta.env.VITE_CHILD_MF}
+          ref={ref}
+        ></iframe>
       </div>
     </>
   )
